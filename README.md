@@ -81,7 +81,7 @@ The TCP 3306 rule was configured but no database connection test was performed.
 
 ## Evidence and Infrastructure
 
-The project includes:
+The project evidence collected includes:
 
 - Configuration screenshots showing VNets, subnets, peering, NSGs and firewall rules.
 - VM deployment and security configuration evidence.
