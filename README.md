@@ -81,14 +81,29 @@ The TCP 3306 rule was configured but no database connection test was performed.
 
 ## Evidence and Infrastructure
 
-The project evidence collected includes:
+### Azure Network Configuration
+- [Hub, Spoke 1 and Spoke 2 screenshots](screenshots/)
+- [Hub-to-Spoke 1 Peering](screenshots/07-Hub-Spoke1-Peering.png)
+- [Hub-to-Spoke 2 Peering](screenshots/08-Hub-Spoke2-Peering.png)
 
-- Configuration screenshots showing VNets, subnets, peering, NSGs and firewall rules.
-- VM deployment and security configuration evidence.
-- Application connectivity and routing test results.
-- Exported ARM and Bicep infrastructure templates.
+### Network Security
+- [Spoke 1 NSG Rules](screenshots/11-Spoke1-Inbound-Security-Rules.png)
+- [Spoke 2 NSG Rules](screenshots/12-Spoke2-Inbound-Security-Rules.png)
+- [Azure Firewall Rules](screenshots/18-Azure-Firewall-Network-Rules.png)
 
-Exported infrastructure templates are retained as implementation references and require review and validation before reuse.
+### Connectivity and Routing
+- [Cross-Spoke Connectivity Test](screenshots/26-Cross-Spoke-Connectivity-Test.png)
+- [Azure Firewall Metrics](screenshots/27-Azure-Firewall-Network-Rule-Metrics.png)
+- [Spoke 1 Effective Routes](screenshots/29-Spoke1-Effective-Routes.png)
+- [Spoke 2 Effective Routes](screenshots/28-Spoke2-Effective-Routes.png)
+
+### Infrastructure as Code
+- [ARM JSON Template](Infrastructure/azure-arm.json)
+- [Bicep Template](Infrastructure/main-github.bicep)
+
+These templates are sanitised exports retained for reference, not validated for automatic redeployment.
+
+**Note:** The exported Spoke 2 NSG contains a rule named `Deny-Spoke1-Other-Traffic` whose actual action is `Allow`. The original configuration is preserved for accurate documentation.
 
 ## Cost Management and Cleanup
 
